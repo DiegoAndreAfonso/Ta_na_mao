@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Perfil do Usuário</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="public/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">TANAMÃO</div>
+      <nav>
+        <a href="#">Início</a>
+        <a href="#">Como Funciona</a>
+        <a href="#" id="openModalBtn">Login/Cadastrar</a>
+      </nav>
+      <div class="user-icon">◯</div>
+    </header>
+
+    <main class="container">
+      <section class="left-col">
+        <div class="profile-card">
+          <div class="avatar">◯</div>
+          <h3>Perfil do usuário</h3>
+          <p class="name">Nome</p>
+          <p class="meta"><strong>E-mail</strong><br />nome@gmail.com</p>
+          <p class="meta"><strong>Telefone</strong><br />(99) 99999-9999</p>
+          <p class="meta"><strong>Endereço</strong><br />Almenara</p>
+          <button id="editProfileBtn" class="btn primary">✎ Editar</button>
+        </div>
+      </section>
+
+      <section class="right-col">
+        <div class="services-panel">
+          <h3>Serviços contratados</h3>
+          <div class="service"> 
+            <div class="service-title">Serviço 1</div>
+            <div class="service-sub">Comentário</div>
+          </div>
+          <div class="service"> 
+            <div class="service-title">Serviço 2</div>
+            <div class="service-sub">Comentário</div>
+          </div>
+          <div class="service"> 
+            <div class="service-title">Serviço 3</div>
+            <div class="service-sub">Comentário</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal (login/cadastro) -->
+    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+      <div class="modal-wrapper">
+        <div class="modal" id="modal">
+          <button class="close" id="closeModalBtn">✕</button>
+          <!-- Painel Login -->
+          <div class="panel left" id="loginPanel">
+            <h2 id="loginTitle">Entrar</h2>
+            <div class="form">
+              <input type="email" placeholder="Email" onfocus="setActive('login')" />
+              <input type="password" placeholder="Senha" onfocus="setActive('login')" />
+              <button class="btn">Entrar</button>
+            </div>
+          </div>
+
+          <!-- Painel Cadastro -->
+          <div class="panel right" id="registerPanel">
+            <h2 id="registerTitle">Cadastrar</h2>
+            <div class="form">
+              <input type="text" placeholder="Nome" onfocus="setActive('register')" />
+              <input type="email" placeholder="Email" onfocus="setActive('register')" />
+              <input type="tel" placeholder="Telefone" onfocus="setActive('register')" />
+              <input type="password" placeholder="Senha" onfocus="setActive('register')" />
+              <input type="password" placeholder="Confirmar senha" onfocus="setActive('register')" />
+              <button class="btn">Cadastrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit user modal -->
+    <div class="edit-overlay" id="editOverlay" aria-hidden="true">
+      <div class="modal-wrapper">
+        <div class="edit-modal">
+          <button class="close" id="editCloseBtn">✕</button>
+          <h2>Editar Perfil</h2>
+          <form id="editForm" class="edit-form">
+            <label>
+              Nome
+              <input id="editName" type="text" />
+            </label>
+            <label>
+              E-mail
+              <input id="editEmail" type="email" />
+            </label>
+            <label>
+              Telefone
+              <input id="editPhone" type="tel" />
+            </label>
+            <label>
+              Endereço
+              <input id="editAddress" type="text" />
+            </label>
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <button type="button" id="editSaveBtn" class="btn primary">Salvar</button>
+              <button type="button" id="editCancelBtn" class="btn">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="public/js/modal.js"></script>
+  </body>
+</html>
